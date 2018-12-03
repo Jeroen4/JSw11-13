@@ -1,0 +1,42 @@
+body{
+	background-image: url(img/background.jpg);
+	outline: none;
+	color: white;
+}
+#game-container{
+	width: 1320px;
+	height: 620px;
+	margin: 0 auto;
+	border-radius: 10px;
+	text-align: center;
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+}
+
+#title{
+	width: 700px;
+	margin: 0 auto;
+}
+
+#description{
+	width: 600px;
+	margin: 0 auto;
+}
+
+#inventoryItem{
+	width: 70px;
+	height: 90px;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+
+#button1{
+	outline: none;
+}
+#button2{
+	outline: none;
+}
+#button3{
+	outline: none;
+}
