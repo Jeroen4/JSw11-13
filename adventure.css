@@ -6,6 +6,7 @@ body{
 #game-container{
 	width: 1320px;
 	height: 620px;
+	border: 2px solid black;
 	margin: 0 auto;
 	border-radius: 10px;
 	text-align: center;
@@ -32,11 +33,46 @@ body{
 }
 
 #button1{
-	outline: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	border-color: #ffff00;
+	background-color: #004d00;
+	color: white;
+	-webkit-transition-duration: 0.2s;
+  	transition-duration: 0.2s;
+  	outline: none;
 }
 #button2{
+	width: 100px;
+	height: 30px;
+	display: none;
+	border-radius: 20px;
+	border-color: #ffff00;
+	background-color: #004d00;
+	color: white;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 	outline: none;
 }
 #button3{
+	width: 100px;
+	height: 30px;
+	display: none;
+	border-radius: 20px;
+	border-color: #ffff00;
+	background-color: #004d00;
+	color: white;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 	outline: none;
+}
+#button1:hover{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#button2:hover{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#button3:hover{
+	background-color: rgba(0, 0, 0, 0.5);
 }
