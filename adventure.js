@@ -32,22 +32,61 @@ btn1.onclick = function(){
 	btn1.onclick = function(){
 		walkLeft();
 	}
+	btn2.onclick = function(){
+		walkForward();
+	}
+	btn3.onclick = function(){
+		walkRight();
+	}
 }
 
 function walkLeft(){
-	btn1.innerHTML = "Walk left";
-	btn2.innerHTML = "Walk forward";
-	btn3.innerHTML = "Walk right";
+	btn1.innerHTML = "Go around";
+	btn2.innerHTML = "Shoot";
+	btn3.innerHTML = "Melee";
 	title.innerHTML = "Next up is objective ALPHA.";
-	description.innerHTML = "Watch out for Tango's. You do not want them to see you.";
+	description.innerHTML = "Check to see if the VIP is in the building. Enemy movement up ahead! Get this situation under controle.";
 	bg.style.backgroundImage = "url('img/left.jpg')";
+	btn1.onclick = function(){
+		walkLeft();
+	}
+	btn2.onclick = function(){
+		walkForward();
+	}
+	btn3.onclick = function(){
+		walkRight();
+	}
 }
 
 function walkForward(){
-	btn1.innerHTML = "Walk left";
-	btn2.innerHTML = "Walk forward";
-	btn3.innerHTML = "Walk right";
-	title.innerHTML = "Next up is objective ALPHA.";
-	description.innerHTML = "Watch out for Tango's. You do not want them to see you.";
+	btn1.innerHTML = "Go to Town ";
+	btn2.innerHTML = "Go to Farm";
+	btn3.innerHTML = "Go to Hotel";
+	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
+	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
+	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
+}
+
+function walkRight(){
+	btn1.innerHTML = "Check the bunker";
+	btn2.innerHTML = "Go back to the street";
+	btn3.innerHTML = "Wait";
+	title.innerHTML = "Next up is objective BRAVO.";
+	description.innerHTML = "Maybe the VIP is in the bunker.";
+	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
+	btn1.onclick = function(){
+		dead1();
+	}
+	btn2.onclick = function(){
+		walkForward();
+	}
+}
+
+
+function dead1(){
+	btn2.style.display = "none";
+	btn3.style.display = "none";
+	title.innerHTML = "Next up is objective BRAVO.";
+	description.innerHTML = "Maybe the VIP is in the bunker.";
 	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
 }
