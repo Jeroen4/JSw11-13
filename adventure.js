@@ -70,16 +70,16 @@ function walkForward(){
 	btn3.innerHTML = "Go to Hotel";
 	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
 	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
-	bg.style.backgroundImage = "url('img/start.jpg')";
+	bg.style.backgroundImage = "url('img/street.jpg')";
 }
 
 function walkRight(){
-	btn1.innerHTML = "Check bunker";
+	btn1.innerHTML = "Check hut";
 	btn2.innerHTML = "Go back to street";
-	btn3.innerHTML = "Wait";
+	btn3.style.display = "none";
 	title.innerHTML = "Next up is objective BRAVO.";
-	description.innerHTML = "Maybe the VIP is in the bunker.";
-	bg.style.backgroundImage = "url('img/bunker.jpg')";
+	description.innerHTML = "Maybe the VIP is in the hut.";
+	bg.style.backgroundImage = "url('img/hut_night.jpg')";
 	btn1.onclick = function(){
 		dead1();
 	}
@@ -87,19 +87,6 @@ function walkRight(){
 		walkForward();
 		clickAudio.play();
 	}
-	btn3.onclick = function(){
-		wait();
-		clickAudio.play();
-	}
-}
-
-function wait(){
-	btn1.innerHTML = "Check bunker";
-	btn2.innerHTML = "Go back to street";
-	btn3.innerHTML = "Wait";
-	title.innerHTML = "Next up is objective BRAVO.";
-	description.innerHTML = "Maybe the VIP is in the bunker.";
-	bg.style.backgroundImage = "url('img/start.jpg')";
 }
 
 function dead1(){
