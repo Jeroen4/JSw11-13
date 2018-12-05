@@ -31,12 +31,15 @@ btn1.onclick = function(){
 	bg.style.backgroundImage = "url('img/start.jpg')";
 	btn1.onclick = function(){
 		walkLeft();
+		clickAudio.play();
 	}
 	btn2.onclick = function(){
 		walkForward();
+		clickAudio.play();
 	}
 	btn3.onclick = function(){
 		walkRight();
+		clickAudio.play();
 	}
 }
 
@@ -49,12 +52,15 @@ function walkLeft(){
 	bg.style.backgroundImage = "url('img/left.jpg')";
 	btn1.onclick = function(){
 		walkLeft();
+		clickAudio.play();
 	}
 	btn2.onclick = function(){
 		walkForward();
+		clickAudio.play();
 	}
 	btn3.onclick = function(){
 		walkRight();
+		clickAudio.play();
 	}
 }
 
@@ -64,29 +70,46 @@ function walkForward(){
 	btn3.innerHTML = "Go to Hotel";
 	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
 	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
-	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
+	bg.style.backgroundImage = "url('img/start.jpg')";
 }
 
 function walkRight(){
-	btn1.innerHTML = "Check the bunker";
-	btn2.innerHTML = "Go back to the street";
+	btn1.innerHTML = "Check bunker";
+	btn2.innerHTML = "Go back to street";
 	btn3.innerHTML = "Wait";
 	title.innerHTML = "Next up is objective BRAVO.";
 	description.innerHTML = "Maybe the VIP is in the bunker.";
-	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
+	bg.style.backgroundImage = "url('img/bunker.jpg')";
 	btn1.onclick = function(){
 		dead1();
 	}
 	btn2.onclick = function(){
 		walkForward();
+		clickAudio.play();
+	}
+	btn3.onclick = function(){
+		wait();
+		clickAudio.play();
 	}
 }
 
-
-function dead1(){
-	btn2.style.display = "none";
-	btn3.style.display = "none";
+function wait(){
+	btn1.innerHTML = "Check bunker";
+	btn2.innerHTML = "Go back to street";
+	btn3.innerHTML = "Wait";
 	title.innerHTML = "Next up is objective BRAVO.";
 	description.innerHTML = "Maybe the VIP is in the bunker.";
-	document.getElementById('game-container').style.backgroundImage = "url('img/start.jpg')";
+	bg.style.backgroundImage = "url('img/start.jpg')";
+}
+
+function dead1(){
+	btn1.style.display = "none";
+	btn2.style.display = "none";
+	btn3.style.display = "none";
+	audio.pause();
+	inventoryItem.style.display = "none";
+	title.innerHTML = "Mission failed, we'll get em' next time.";
+	description.innerHTML = "Press F5 to start again.";
+	bg.style.backgroundImage = "url('img/gameover.jpg')";
+	bg.style.border = "none";
 }

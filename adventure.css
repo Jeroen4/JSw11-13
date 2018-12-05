@@ -33,7 +33,7 @@ body{
 }
 
 #button1{
-	width: 100px;
+	width: 120px;
 	height: 30px;
 	border-radius: 20px;
 	border-color: #ffff00;
@@ -44,7 +44,7 @@ body{
   	outline: none;
 }
 #button2{
-	width: 100px;
+	width: 120px;
 	height: 30px;
 	display: none;
 	border-radius: 20px;
@@ -56,7 +56,7 @@ body{
 	outline: none;
 }
 #button3{
-	width: 100px;
+	width: 120px;
 	height: 30px;
 	display: none;
 	border-radius: 20px;
