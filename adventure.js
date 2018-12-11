@@ -7,6 +7,7 @@ var btn3 = document.getElementById('button3');
 var inventory = document.getElementById('inventoryItem');
 var clickAudio = new Audio('snd/click.mp3');
 var audio = new Audio('snd/soundtrack.mp3');
+var VIP = false;
 
 title.innerHTML = "VIP Extraction";
 description.innerHTML = "Your mission is to extract a VIP out of the Vietnamese jungle. You must succeed without being spotted.";
@@ -86,22 +87,27 @@ function walkForward(){
 }
 
 function town(){
-	btn1.innerHTML = "Go to Town ";
-	btn2.innerHTML = "Go to Farm";
-	btn3.innerHTML = "Go to Hotel";
+	btn1.innerHTML = "Go to Woods";
+	btn2.innerHTML = "Search for VIP";
+	btn3.style.display = "none";
 	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
 	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
 	bg.style.backgroundImage = "url('img/street.jpg')";
 	btn1.onclick = function(){
-		town();
+		clickAudio.play();
+		if (VIP == true) {
+			woods();		//maak functie 'woods' aan
+		}else{
+			alert('The VIP last known location is here.')
+		}
+	}
+	btn2.onclick = function(){									
+		search();			//maak functie 'SEARCH' aan
 		clickAudio.play();
 	}
-	btn2.onclick = function(){									//LEVEL AANPASSEN
-		farm();
-		clickAudio.play();
-	}
-	btn3.onclick = function(){
-		hotel();
+	VIP.onclick = function(){
+		VIP.style.display = "none";
+		VIP = true;
 		clickAudio.play();
 	}
 }
@@ -117,7 +123,7 @@ function farm(){
 		town();
 		clickAudio.play();
 	}
-	btn2.onclick = function(){									//LEVEL AANPASSEN
+	btn2.onclick = function(){									//LEVEL AANPASSEN: dit is level 'FARM' 
 		farm();
 		clickAudio.play();
 	}
@@ -138,7 +144,7 @@ function hotel(){
 		town();
 		clickAudio.play();
 	}
-	btn2.onclick = function(){										//LEVEL AANPASSEN
+	btn2.onclick = function(){									//LEVEL AANPASSEN: dit is level 'HOTEL'
 		farm();
 		clickAudio.play();
 	}
