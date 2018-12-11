@@ -106,7 +106,7 @@ function town(){
 		clickAudio.play();
 	}
 	VIP.onclick = function(){
-		VIP.style.display = "none";
+		VIP.style.display = "none";				//Plaats VIP plaatje met textwolkje.
 		VIP = true;
 		clickAudio.play();
 	}
@@ -124,7 +124,7 @@ function farm(){
 		clickAudio.play();
 	}
 	btn2.onclick = function(){									//LEVEL AANPASSEN: dit is level 'FARM' 
-		farm();
+		farm();													
 		clickAudio.play();
 	}
 	btn3.onclick = function(){
