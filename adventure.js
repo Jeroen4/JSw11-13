@@ -71,6 +71,81 @@ function walkForward(){
 	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
 	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
 	bg.style.backgroundImage = "url('img/street.jpg')";
+	btn1.onclick = function(){
+		town();
+		clickAudio.play();
+	}
+	btn2.onclick = function(){
+		farm();
+		clickAudio.play();
+	}
+	btn3.onclick = function(){
+		hotel();
+		clickAudio.play();
+	}
+}
+
+function town(){
+	btn1.innerHTML = "Go to Town ";
+	btn2.innerHTML = "Go to Farm";
+	btn3.innerHTML = "Go to Hotel";
+	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
+	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
+	bg.style.backgroundImage = "url('img/street.jpg')";
+	btn1.onclick = function(){
+		town();
+		clickAudio.play();
+	}
+	btn2.onclick = function(){									//LEVEL AANPASSEN
+		farm();
+		clickAudio.play();
+	}
+	btn3.onclick = function(){
+		hotel();
+		clickAudio.play();
+	}
+}
+
+function farm(){
+	btn1.innerHTML = "Go to Town ";
+	btn2.innerHTML = "Go to Farm";
+	btn3.innerHTML = "Go to Hotel";
+	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
+	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
+	bg.style.backgroundImage = "url('img/street.jpg')";
+	btn1.onclick = function(){
+		town();
+		clickAudio.play();
+	}
+	btn2.onclick = function(){									//LEVEL AANPASSEN
+		farm();
+		clickAudio.play();
+	}
+	btn3.onclick = function(){
+		hotel();
+		clickAudio.play();
+	}
+}
+
+function hotel(){
+	btn1.innerHTML = "Go to Town ";
+	btn2.innerHTML = "Go to Farm";
+	btn3.innerHTML = "Go to Hotel";
+	title.innerHTML = "Location of objective CHARLIE is unknown. Find the objective.";
+	description.innerHTML = "You must find the objective and check if the VIP is there. Watch out for enemy movement.";
+	bg.style.backgroundImage = "url('img/street.jpg')";
+	btn1.onclick = function(){
+		town();
+		clickAudio.play();
+	}
+	btn2.onclick = function(){										//LEVEL AANPASSEN
+		farm();
+		clickAudio.play();
+	}
+	btn3.onclick = function(){
+		hotel();
+		clickAudio.play();
+	}
 }
 
 function walkRight(){
@@ -100,3 +175,4 @@ function dead1(){
 	bg.style.backgroundImage = "url('img/gameover.jpg')";
 	bg.style.border = "none";
 }
+
