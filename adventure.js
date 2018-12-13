@@ -247,10 +247,17 @@ function resort(){
 	document.getElementById('game-container').appendChild(secret2);
 	btn1.onclick = function(){
 		secret2.style.display = "none";
-		dead4();
 		clickAudio.play();
+		if (secret2 == false) {
+			secret2.style.display = "none";
+			dead4();
+		}else{
+			secret2.style.display = "none";
+			dead4();
+		}
 	}
-	btn2.onclick = function(){									
+	btn2.onclick = function(){	
+		btn1.style.display = "none";								
 		woods();
 		clickAudio.play();
 		if (secret2 == false) {
@@ -264,6 +271,7 @@ function resort(){
 	secret2.onclick = function(){
 		secret2.style.display = "none";
 		secret2 = true;
+		btn1.style.display = "none";
 		checkAudio.play();
 		console.log('Secret 2');
 	}
