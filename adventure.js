@@ -89,6 +89,10 @@ function goAround(){
 }
 function dead2(){
 	console.log('Dead');
+	inv1.style.display = "none";
+	btn1.style.display = "none";
+	inv2.style.display = "none";
+	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -151,6 +155,10 @@ function farm(){
 			secret.style.display = "none";  //A clickable item.
 			secret = true;
 			checkAudio.play();
+			var inv1 = document.createElement('img');
+			inv1.src = 'img/secret.png';
+			inv1.id = 'inv1';
+			document.getElementById('game-container').appendChild(inv1);
 		}
 }
 
@@ -186,7 +194,7 @@ function search(){
 	description.innerHTML = "Take him with you.";
 	bg.style.backgroundImage = "url('img/house.jpg')";
 	var img = document.createElement('img');
-	img.src = 'img/VIP.png';
+	img.src = 'img/vip.png';
 	img.id = 'VIP';
 	document.getElementById('game-container').appendChild(img);
 	btn1.onclick = function(){
@@ -200,6 +208,10 @@ function search(){
 	img.ondblclick = function(){
 		img.style.display = "none";				
 		img = true;
+		var inv2 = document.createElement('img');
+		inv2.src = 'img/vip.png';
+		inv2.id = 'inv2';
+		document.getElementById('game-container').appendChild(inv2);
 		checkAudio.play();
 		console.log('VIP');
 	}
@@ -227,6 +239,10 @@ function woods(){
 
 function win1(){
 	console.log('Win');
+	inv1.style.display = "none";
+	btn1.style.display = "none";
+	inv2.style.display = "none";
+	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -239,6 +255,10 @@ function win1(){
 
 function dead3(){
 	console.log('Dead');
+	inv1.style.display = "none";
+	btn1.style.display = "none";
+	inv2.style.display = "none";
+	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -289,6 +309,10 @@ function resort(){
 		vip2.style.display = "none";
 		vip2 = true;
 		btn1.style.display = "none";
+		var inv2 = document.createElement('img');
+		inv2.src = 'img/vip.png';
+		inv2.id = 'inv2';
+		document.getElementById('game-container').appendChild(inv2);
 		checkAudio.play();
 		console.log('VIP');
 	}
@@ -317,6 +341,10 @@ function woods2(){
 
 function dead4(){
 	console.log('Dead');
+	inv1.style.display = "none";
+	btn1.style.display = "none";
+	inv2.style.display = "none";
+	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -347,7 +375,10 @@ function walkRight(){
 
 function dead1(){
 	console.log('Dead');
+	inv1.style.display = "none";
 	btn1.style.display = "none";
+	inv2.style.display = "none";
+	inventoryItem.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
 	inventoryItem.style.display = "none";

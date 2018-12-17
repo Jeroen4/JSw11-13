@@ -118,3 +118,17 @@ body{
 	left: 540px;
 	bottom: 50px;
 }
+#inv2{
+	width: 70px;
+	height: 90px;
+	position: absolute;
+	left: 90px;
+	bottom: 20px;
+}
+#inv1{
+	width: 50px;
+	height: 70px;
+	position: absolute;
+	left: 20px;
+	bottom: 100px;
+}
