@@ -8,8 +8,8 @@ var inventory = document.getElementById('inventoryItem');
 var clickAudio = new Audio('snd/click.mp3');
 var checkAudio = new Audio('snd/checkmark.mp3');
 img = false;
+vip2 = false;
 secret = false;
-secret2 = false;
 document.addEventListener('mousedown', function (event) {
   if (event.detail > 1) {
     event.preventDefault(); //No highlighting on text after double click.
@@ -65,7 +65,6 @@ function walkLeft(){
 	}
 	btn2.onclick = function(){
 		start();
-		btn1.style.display = "none";
 		clickAudio.play();
 	}
 }
@@ -217,9 +216,11 @@ function woods(){
 	description.innerHTML = "be very careful.";
 	bg.style.backgroundImage = "url('img/forest.jpg')";
 	btn1.onclick = function(){
+		checkAudio.play();
 		dead3();
 	}
 	btn2.onclick = function(){
+		checkAudio.play();
 		win1();
 	}
 }
@@ -257,18 +258,18 @@ function resort(){
 	title.innerHTML = "The objective also is not here";
 	description.innerHTML = "Turn around.";
 	bg.style.backgroundImage = "url('img/resort.jpg')";
-	var secret2 = document.createElement('img');
-	secret2.src = 'img/secret.png';
-	secret2.id = 'secret2';
-	document.getElementById('game-container').appendChild(secret2);
+	var vip2 = document.createElement('img');
+	vip2.src = 'img/vip.png';
+	vip2.id = 'vip2';
+	document.getElementById('game-container').appendChild(vip2);
 	btn1.onclick = function(){
-		secret2.style.display = "none";
+		vip2.style.display = "none";
 		clickAudio.play();
-		if (secret2 == false) {
-			secret2.style.display = "none";
+		if (vip2 == false) {
+			vip2.style.display = "none";
 			dead4();
 		}else{
-			secret2.style.display = "none";
+			vip2.style.display = "none";
 			dead4();
 		}
 	}
@@ -276,21 +277,42 @@ function resort(){
 		btn1.style.display = "none";								
 		woods();
 		clickAudio.play();
-		if (secret2 == false) {
-			secret2.style.display = "none";
-			woods();
+		if (vip2 == false) {
+			vip2.style.display = "none";
+			woods2();
 		}else{
-			secret2.style.display = "none";
-			woods();
+			vip2.style.display = "none";
+			woods2();
 		}
 	}
-	secret2.ondblclick = function(){
-		secret2.style.display = "none";
-		secret2 = true;
+	vip2.ondblclick = function(){
+		vip2.style.display = "none";
+		vip2 = true;
 		btn1.style.display = "none";
 		checkAudio.play();
-		console.log('Secret 2');
+		console.log('VIP');
 	}
+}
+
+function woods2(){
+	console.log('Level 8');
+	btn1.style.display = "inline";
+	btn1.innerHTML = "Bridge";
+	btn2.style.display = "inline";
+	btn2.innerHTML = "Trench";
+	inventoryItem.style.display = "none";
+	title.innerHTML = "You haven't found the VIP and you can't go back anymore.";
+	description.innerHTML = "Be very careful.";
+	bg.style.backgroundImage = "url('img/forest.jpg')";
+	btn1.onclick = function(){
+		checkAudio.play();
+		dead4();
+	}
+	btn2.onclick = function(){
+		checkAudio.play();
+		dead4();
+	}
+
 }
 
 function dead4(){
@@ -314,11 +336,11 @@ function walkRight(){
 	description.innerHTML = "Maybe the VIP is in the hut.";
 	bg.style.backgroundImage = "url('img/hut_night.jpg')";
 	btn1.onclick = function(){
+		checkAudio.play();
 		dead1();
 	}
 	btn2.onclick = function(){
 		start();
-		btn3.style.display = "none";
 		clickAudio.play();
 	}
 }
