@@ -10,26 +10,29 @@ var checkAudio = new Audio('snd/checkmark.mp3');
 img = false;
 secret = false;
 secret2 = false;
+document.addEventListener('mousedown', function (event) {
+  if (event.detail > 1) {
+    event.preventDefault(); //No highlighting on text after double click.
+  }
+}, false);
 
-title.innerHTML = "VIP Extraction";
-description.innerHTML = "Your mission is to extract a VIP out of the Vietnamese jungle. You must succeed without being spotted.";
 btn1.innerHTML = "Start";
 inventory.style.display = "none";
 btn2.style.display = "none";
 btn3.style.display = "none";
-
 btn1.onclick = start;
 
 
 function start(){
+	console.log('Level 1');
 	clickAudio.play();
 	btn1.innerHTML = "Walk left";
 	btn2.style.display = "inline";
-	btn3.style.display = "inline";
+	btn3.style.display = "inline";       //Function for a level. All levels are build up the same way.
 	btn2.innerHTML = "Walk forward";
 	btn3.innerHTML = "Walk right";
 	title.innerHTML = "You have landed and you must find and extract the VIP.";
-	description.innerHTML = "Try to get out of here. The VIP has three possible locations. Infiltrate all 3 objectives and extract the VIP when found. Shoot only if necessary. You are armed with a pistol and 2 magazine's.";
+	description.innerHTML = "Try to get out of here. The VIP has three possible locations. Infiltrate all 3 objectives and extract the VIP when found. You are armed with a pistol and 2 magazine's.";
 	inventory.style.display = "inline";
 	inventory.src = "img/16.png";
 	bg.style.backgroundImage = "url('img/start.jpg')";
@@ -49,6 +52,7 @@ function start(){
 	
 
 function walkLeft(){
+	console.log('Level 2');
 	btn1.innerHTML = "Go around";
 	btn2.innerHTML = "Go back";
 	btn3.style.display = "none";
@@ -67,6 +71,7 @@ function walkLeft(){
 }
 
 function goAround(){
+	console.log('Level 3');
 	btn1.innerHTML = "Check Building";
 	btn2.innerHTML = "Go back";
 	btn3.style.display = "none";
@@ -84,6 +89,7 @@ function goAround(){
 	}
 }
 function dead2(){
+	console.log('Dead');
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -95,6 +101,7 @@ function dead2(){
 }
 
 function walkForward(){
+	console.log('Level 2');
 	btn1.style.display = "inline";
 	btn3.style.display = "inline";
 	btn1.innerHTML = "Go to Town ";
@@ -118,6 +125,7 @@ function walkForward(){
 	}
 }
 function farm(){
+	console.log('Level 4');
 	btn1.innerHTML = "Go back to Street";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -139,26 +147,27 @@ function farm(){
 				btn3.style.display = "inline";
 			}
 		}
-		secret.onclick = function(){
+		secret.ondblclick = function(){
 			console.log('Top secret')
-			secret.style.display = "none";
+			secret.style.display = "none";  //A clickable item.
 			secret = true;
 			checkAudio.play();
 		}
 }
 
 function town(){
+	console.log('Level 5');
 	btn1.innerHTML = "Go to Woods";
 	btn2.style.display = "inline";
 	btn2.innerHTML = "Search for VIP";
 	btn3.style.display = "none";
-	title.innerHTML = "You have found objective CHARLIE"; //***TEKST AANPASSEN***//
+	title.innerHTML = "You have found objective CHARLIE"; 
 	description.innerHTML = "You must check if the VIP is there.";
 	bg.style.backgroundImage = "url('img/town.jpg')";
 	btn1.onclick = function(){
 		clickAudio.play();
 		if (img == false) {
-			alert('The VIP was seen here.')
+			alert('The VIP was seen here.');
 		}else{
 			woods();
 		}
@@ -170,6 +179,7 @@ function town(){
 }
 
 function search(){
+	console.log('6');
 	btn1.innerHTML = "Go to Woods";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -188,7 +198,7 @@ function search(){
 			alert('The VIP last known location is here.');
 		}
 	}
-	img.onclick = function(){
+	img.ondblclick = function(){
 		img.style.display = "none";				
 		img = true;
 		checkAudio.play();
@@ -197,6 +207,8 @@ function search(){
 }
 
 function woods(){
+	console.log('Level 7');
+	btn1.style.display = "inline";
 	btn1.innerHTML = "Bridge";
 	btn2.style.display = "inline";
 	btn2.innerHTML = "Trench";
@@ -213,6 +225,7 @@ function woods(){
 }
 
 function win1(){
+	console.log('Win');
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -224,6 +237,7 @@ function win1(){
 }
 
 function dead3(){
+	console.log('Dead');
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -235,7 +249,9 @@ function dead3(){
 }
 
 function resort(){
+	console.log('Level 4');
 	btn1.innerHTML = "Go back ";
+	btn2.style.display = "inline";
 	btn2.innerHTML = "Go to Woods";
 	btn3.style.display = "none";
 	title.innerHTML = "The objective also is not here";
@@ -268,7 +284,7 @@ function resort(){
 			woods();
 		}
 	}
-	secret2.onclick = function(){
+	secret2.ondblclick = function(){
 		secret2.style.display = "none";
 		secret2 = true;
 		btn1.style.display = "none";
@@ -278,6 +294,7 @@ function resort(){
 }
 
 function dead4(){
+	console.log('Dead');
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -289,6 +306,7 @@ function dead4(){
 }
 
 function walkRight(){
+	console.log('Level 2');
 	btn1.innerHTML = "Check hut";
 	btn2.innerHTML = "Go back";
 	btn3.style.display = "none";
@@ -306,6 +324,7 @@ function walkRight(){
 }
 
 function dead1(){
+	console.log('Dead');
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -315,5 +334,3 @@ function dead1(){
 	bg.style.backgroundImage = "url('img/gameover.jpg')";
 	bg.style.border = "none";
 }
-
-

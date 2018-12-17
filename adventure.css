@@ -1,8 +1,12 @@
 body{
 	background-image: url(img/background.jpg);
+	font-family: Bodoni MT;
 	outline: none;
 	color: white;
 }
+
+/*--------------------USER-INTERFACE----------------*/
+
 #game-container{
 	width: 1350px;
 	height: 635px;
@@ -37,6 +41,8 @@ body{
 	left: 20px;
 	bottom: 20px;
 }
+
+/*-----------------------------BUTTONS--------------------*/
 
 #button1{
 	width: 120px;
@@ -88,6 +94,9 @@ body{
 	border-color: black;
 	color: black;
 }
+
+/*-----------------------ITEMS-----------------------*/
+
 #VIP{
 	position: absolute;
 	left: 150px;
