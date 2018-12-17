@@ -89,10 +89,6 @@ function goAround(){
 }
 function dead2(){
 	console.log('Dead');
-	inv1.style.display = "none";
-	btn1.style.display = "none";
-	inv2.style.display = "none";
-	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -239,10 +235,6 @@ function woods(){
 
 function win1(){
 	console.log('Win');
-	inv1.style.display = "none";
-	btn1.style.display = "none";
-	inv2.style.display = "none";
-	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -255,10 +247,6 @@ function win1(){
 
 function dead3(){
 	console.log('Dead');
-	inv1.style.display = "none";
-	btn1.style.display = "none";
-	inv2.style.display = "none";
-	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -341,10 +329,6 @@ function woods2(){
 
 function dead4(){
 	console.log('Dead');
-	inv1.style.display = "none";
-	btn1.style.display = "none";
-	inv2.style.display = "none";
-	inventoryItem.style.display = "none";
 	btn1.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
@@ -375,10 +359,7 @@ function walkRight(){
 
 function dead1(){
 	console.log('Dead');
-	inv1.style.display = "none";
 	btn1.style.display = "none";
-	inv2.style.display = "none";
-	inventoryItem.style.display = "none";
 	btn2.style.display = "none";
 	btn3.style.display = "none";
 	inventoryItem.style.display = "none";
