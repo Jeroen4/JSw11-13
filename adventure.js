@@ -12,7 +12,7 @@ vip2 = false;
 secret = false;
 document.addEventListener('mousedown', function (event) {
   if (event.detail > 1) {
-    event.preventDefault(); //No highlighting on text after double click.
+    event.preventDefault(); 			//No highlighting on text after double click.
   }
 }, false);
 
