@@ -7,9 +7,15 @@ var btn3 = document.getElementById('button3');
 var inventory = document.getElementById('inventoryItem');
 var clickAudio = new Audio('snd/click.mp3');
 var checkAudio = new Audio('snd/checkmark.mp3');
-img = false;
-vip2 = false;
-secret = false;
+
+var secret = document.createElement('img');
+var inv1 = document.createElement('img');
+var inv2 = document.createElement('img');
+var img = document.createElement('img');
+var vip2 = document.createElement('img');
+var secretcheck = false;
+var imgcheck = false;
+var vip2check = false;
 document.addEventListener('mousedown', function (event) {
   if (event.detail > 1) {
     event.preventDefault(); 			//No highlighting on text after double click.
@@ -131,13 +137,12 @@ function farm(){
 	title.innerHTML = "The Farm has been destroyed.";
 	description.innerHTML = "The VIP also isn't here but maybe you can find something of big importance.";
 	bg.style.backgroundImage = "url('img/farm.jpg')";
-	var secret = document.createElement('img');
 	secret.src = 'img/secret.png';
 	secret.id = 'secret';
 	document.getElementById('game-container').appendChild(secret);
 	btn1.onclick = function(){
 		clickAudio.play();
-		if (secret == false) {
+		if (secretcheck == false) {
 				alert('Maybe there is something important.');
 			}else{
 				walkForward();
@@ -149,9 +154,8 @@ function farm(){
 		secret.ondblclick = function(){
 			console.log('Top secret')
 			secret.style.display = "none";  //A clickable item.
-			secret = true;
+			secretcheck = true;
 			checkAudio.play();
-			var inv1 = document.createElement('img');
 			inv1.src = 'img/secret.png';
 			inv1.id = 'inv1';
 			document.getElementById('game-container').appendChild(inv1);
@@ -189,13 +193,12 @@ function search(){
 	title.innerHTML = "You have found the VIP";
 	description.innerHTML = "Take him with you.";
 	bg.style.backgroundImage = "url('img/house.jpg')";
-	var img = document.createElement('img');
 	img.src = 'img/vip.png';
 	img.id = 'VIP';
 	document.getElementById('game-container').appendChild(img);
 	btn1.onclick = function(){
 		clickAudio.play();
-		if (img == true) {
+		if (imgcheck == true) {
 			woods();		
 		}else{
 			alert('The VIP last known location is here.');
@@ -203,8 +206,7 @@ function search(){
 	}
 	img.ondblclick = function(){
 		img.style.display = "none";				
-		img = true;
-		var inv2 = document.createElement('img');
+		imgcheck = true;
 		inv2.src = 'img/vip.png';
 		inv2.id = 'inv2';
 		document.getElementById('game-container').appendChild(inv2);
@@ -243,6 +245,9 @@ function win1(){
 	description.innerHTML = "Press F5 to start again.";
 	bg.style.backgroundImage = "url('img/win.jpg')";
 	bg.style.border = "none";
+	vip2.style.display = "none";
+	img.style.display = "none";
+	secret.style.display = "none";
 }
 
 function dead3(){
@@ -266,14 +271,14 @@ function resort(){
 	title.innerHTML = "The objective also is not here";
 	description.innerHTML = "Turn around.";
 	bg.style.backgroundImage = "url('img/resort.jpg')";
-	var vip2 = document.createElement('img');
+
 	vip2.src = 'img/vip.png';
 	vip2.id = 'vip2';
 	document.getElementById('game-container').appendChild(vip2);
 	btn1.onclick = function(){
 		vip2.style.display = "none";
 		clickAudio.play();
-		if (vip2 == false) {
+		if (vip2check == false) {
 			vip2.style.display = "none";
 			dead4();
 		}else{
@@ -285,7 +290,7 @@ function resort(){
 		btn1.style.display = "none";								
 		woods();
 		clickAudio.play();
-		if (vip2 == false) {
+		if (vip2check == false) {
 			vip2.style.display = "none";
 			woods2();
 		}else{
@@ -295,9 +300,8 @@ function resort(){
 	}
 	vip2.ondblclick = function(){
 		vip2.style.display = "none";
-		vip2 = true;
+		vip2check = true;
 		btn1.style.display = "none";
-		var inv2 = document.createElement('img');
 		inv2.src = 'img/vip.png';
 		inv2.id = 'inv2';
 		document.getElementById('game-container').appendChild(inv2);
